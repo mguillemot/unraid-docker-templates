@@ -1,30 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Containers>
-  <Date>2017-10-28</Date>
+<?xml version="1.0"?>
+<Container version="2">
   <Name>Cron</Name>
-  <Overview>
-    Execute cron jobs.
-  </Overview>
-  <Registry>https://registry.hub.docker.com/u/mguillemot/unraid-cron/</Registry>
-  <GitHub>https://github.com/mguillemot/unraid-docker-templates</GitHub>
-  <Repository>mguillemot/unraid-docker-templates</Repository>
-  <BindTime>true</BindTime>
+  <Repository>mguillemot/unraid-cron</Repository>
+  <Registry>https://registry.hub.docker.com/u/mguillemot/unraid-cron</Registry>
+  <Network>host</Network>
   <Privileged>false</Privileged>
+  <Support/>
+  <Overview>Execute cron jobs.</Overview>
+  <Category>Backup:</Category>
+  <WebUI/>
+  <TemplateURL>https://github.com/mguillemot/unraid-docker-templates/blob/master/mguillemot/cron.xml</TemplateURL>
+  <Icon/>
+  <ExtraParams/>
+  <DateInstalled>1509147997</DateInstalled>
+  <Description>Execute cron jobs.</Description>
   <Networking>
     <Mode>host</Mode>
     <Publish/>
   </Networking>
-  <Environment/>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/cron/config</HostDir>
+      <HostDir>/mnt/cache/appdata/Cron/config</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>r</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/cron/data</HostDir>
-      <ContainerDir>/config</ContainerDir>
+      <HostDir>/mnt/cache/appdata/Cron/data</HostDir>
+      <ContainerDir>/data</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
-</Containers>
+  <Environment/>
+  <Config Name="AppData Config Path" Target="/config" Default="/mnt/cache/appdata/Cron/config" Mode="r" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/cache/appdata/Cron/config</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/mnt/cache/appdata/Cron/data" Mode="rw" Description="Container Path: /data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/cache/appdata/Cron/data</Config>
+</Container>
