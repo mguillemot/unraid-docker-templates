@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Containers>
+  <Date>2017-10-28</Date>
+  <Name>Cron</Name>
+  <Overview>
+    Execute cron jobs.
+  </Overview>
+  <Registry>https://registry.hub.docker.com/u/mguillemot/unraid-cron/</Registry>
+  <GitHub>https://github.com/mguillemot/unraid-docker-templates</GitHub>
+  <Repository>mguillemot/unraid-docker-templates</Repository>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish/>
+  </Networking>
+  <Environment/>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/cron/config</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>r</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/cron/data</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+</Containers>
