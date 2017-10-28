@@ -12,7 +12,7 @@
   <TemplateURL>https://github.com/mguillemot/unraid-docker-templates/blob/master/mguillemot/cron.xml</TemplateURL>
   <Icon/>
   <ExtraParams/>
-  <DateInstalled>1509147997</DateInstalled>
+  <DateInstalled>1509208278</DateInstalled>
   <Description>Execute cron jobs.</Description>
   <Networking>
     <Mode>host</Mode>
@@ -20,9 +20,14 @@
   </Networking>
   <Data>
     <Volume>
+      <HostDir>/mnt/cache/appdata/Cron/logs</HostDir>
+      <ContainerDir>/logs</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
       <HostDir>/mnt/cache/appdata/Cron/config</HostDir>
       <ContainerDir>/config</ContainerDir>
-      <Mode>r</Mode>
+      <Mode>ro</Mode>
     </Volume>
     <Volume>
       <HostDir>/mnt/cache/appdata/Cron/data</HostDir>
@@ -31,6 +36,7 @@
     </Volume>
   </Data>
   <Environment/>
-  <Config Name="AppData Config Path" Target="/config" Default="/mnt/cache/appdata/Cron/config" Mode="r" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/cache/appdata/Cron/config</Config>
-  <Config Name="AppData Config Path" Target="/config" Default="/mnt/cache/appdata/Cron/data" Mode="rw" Description="Container Path: /data" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/cache/appdata/Cron/data</Config>
+  <Config Name="Logs path" Target="/logs" Default="" Mode="rw" Description="Container Path: /logs" Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/appdata/Cron/logs</Config>
+  <Config Name="Config path" Target="/config" Default="" Mode="ro" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/appdata/Cron/config</Config>
+  <Config Name="Data path" Target="/data" Default="/mnt/cache/appdata/Cron/data" Mode="rw" Description="Container Path: /data" Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/appdata/Cron/data</Config>
 </Container>
