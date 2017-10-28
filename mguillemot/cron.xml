@@ -27,7 +27,7 @@
     <Volume>
       <HostDir>/mnt/cache/appdata/Cron/config</HostDir>
       <ContainerDir>/config</ContainerDir>
-      <Mode>ro</Mode>
+      <Mode>rw</Mode>
     </Volume>
     <Volume>
       <HostDir>/mnt/cache/appdata/Cron/data</HostDir>
